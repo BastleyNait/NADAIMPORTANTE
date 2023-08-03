@@ -57,7 +57,6 @@ public class MenuPrincipalController implements Initializable {
             try {
                 almacenes = new GraphLink<>();
                 Scanner scanner = new Scanner(file);
-                scanner.nextLine();
                 while (scanner.hasNextLine()) {
                     String linea = scanner.nextLine();
                     String[] dato = linea.split(",");
@@ -76,13 +75,12 @@ public class MenuPrincipalController implements Initializable {
         if (file != null) {
             try {
                 Scanner scanner = new Scanner(file);
-                scanner.nextLine();
                 while (scanner.hasNextLine()) {
                     String linea = scanner.nextLine();
                     String[] dato = linea.split(",");
-                    Almacen origen = almacenes.getVertexByCode(Integer.parseInt(dato[0])).getData();
-                    Almacen destino = almacenes.getVertexByCode(Integer.parseInt(dato[2])).getData();
-                    almacenes.insertEdge(origen, destino, Integer.parseInt(dato[1]));
+                    Almacen origen = almacenes.getVertexByCode(Integer.parseInt(dato[0]));
+                    Almacen destino = almacenes.getVertexByCode(Integer.parseInt(dato[2]));
+                    almacenes.insertEdge(origen, Integer.parseInt(dato[1]), destino);
                 }
                 System.out.println(almacenes);
             } catch (Exception e) {

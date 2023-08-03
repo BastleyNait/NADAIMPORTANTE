@@ -97,6 +97,23 @@ public class GraphLink<E extends Comparable<E>> {
         return listVertex;
     }
 
+    public void insertEdge(E dataOri,  int weight, E dataDes) {
+        Vertex<E> vOri = this.listVertex.searchData(new Vertex<E>(dataOri));
+        Vertex<E> vDes = this.listVertex.searchData(new Vertex<E>(dataDes));
+
+        if (vOri == null || vDes == null) {
+            System.out.println(dataOri + " o " + dataDes + " no existen....");
+        } else {
+            Edge<E> e = new Edge<E>(vDes, weight);
+            if (vOri.listAdj.search(e) || vDes.listAdj.search(e)) {
+                System.out.println("Arista (" + dataOri + "," + dataDes + ") ya fue insertada...");
+            } else {
+                vOri.listAdj.insertFirst(e);
+                vDes.listAdj.insertFirst(new Edge<E>(vOri, weight));
+            }
+        }
+    }
+
     public Vertex<E> getVertexAtIndex(int index) {
         if (index < 0 || index >= this.listVertex.lenght()) {
             return null;
@@ -117,33 +134,30 @@ public class GraphLink<E extends Comparable<E>> {
         }
     }
 
-    public void insertEdge(E dataOri, E dataDes, int weight) {
-        Vertex<E> vOri = this.listVertex.searchData(new Vertex<E>(dataOri));
-        Vertex<E> vDes = this.listVertex.searchData(new Vertex<E>(dataDes));
+    public Almacen getVertexByCode(int code) {
+        Node<Vertex<E>> current = listVertex.getHead();
 
-        if (vOri == null || vDes == null) {
-            System.out.println(dataOri + " o " + dataDes + " no existen....");
-        } else {
-            Edge<E> e = new Edge<E>(vDes, weight);
-            if (vOri.listAdj.search(e) || vDes.listAdj.search(e)) {
-                System.out.println("Arista (" + dataOri + "," + dataDes + ") ya fue insertada...");
-            } else {
-                vOri.listAdj.insertFirst(e);
-                vDes.listAdj.insertFirst(new Edge<E>(vOri, weight));
+        while (current != null) {
+            Vertex<Almacen> vertex = (Vertex<Almacen>) current.getData();
+
+            if (vertex.getData().getCodigoAlmacen() == code) {
+                return vertex.getData();
             }
+            current = current.getNext();
         }
+
+        return null;
     }
 
-    public Vertex<E> getVertexByCode(int code) {
-        Node<Vertex<E>> aux = this.listVertex.getHead();
-
-        while (aux != null) {
-            if (aux.getData().getData().equals(code)) {
-                return aux.getData();
+    public Almacen getVertexByName(String nombre) {
+        Node<Vertex<E>> current = listVertex.getHead();
+        while (current != null) {
+            Vertex<Almacen> vertex = (Vertex<Almacen>) current.getData();
+            if (vertex.getData().getNombreAlmacen().equals(nombre)) {
+                return vertex.getData();
             }
-            aux = aux.getNext();
+            current = current.getNext();
         }
-
         return null;
     }
 

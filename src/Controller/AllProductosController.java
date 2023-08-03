@@ -85,7 +85,6 @@ public class AllProductosController implements Initializable {
                 e.printStackTrace();
             }
         }
-
     }
 
     @FXML

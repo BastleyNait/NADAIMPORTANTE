@@ -121,7 +121,6 @@ public class ListLinked<E extends Comparable<E>> {
     public Node<E> getHead() {
         return this.head;
     }
-
     public String toString() {
         String str = "";
         for (Node<E> aux = this.head; aux != null; aux = aux.getNext()) {
