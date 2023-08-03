@@ -1,0 +1,42 @@
+
+.mainFxmlClass {
+
+}
+
+.txt {
+    -fx-font-family: "Gill Sans MT Bold";
+}
+
+.texto{
+    -fx-font-family: "Gill Sans MT";
+}
+
+.btn {
+    -fx-background-radius: 15px;
+    -fx-font-family: "Gill Sans MT";
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-background-color:  #211453;
+    -fx-padding: 5px;
+}
+
+.btn:hover{
+    -fx-background-color:  #180F3D;
+}
+
+.field{
+    -fx-font-family: "Poppins";
+    -fx-font-size: 14px;
+    -fx-border-radius: 10px;
+    -fx-background-color: #E7E7E7;
+    -fx-background-radius: 5px;
+    -fx-padding: 10px;
+
+}
+
+
+.pane {
+    -fx-border-width: 2px;
+    -fx-border-color: black;
+    -fx-border-style: solid;
+}

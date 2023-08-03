@@ -1,0 +1,18 @@
+
+.btnMenu {
+    -fx-background-radius: 15px;
+    -fx-font-family: "Gill Sans MT";
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-background-color:  #211453;
+    -fx-padding: 15px;
+}
+
+.btnMenu:hover{
+    -fx-background-color:  #180F3D;
+}
+
+.txt {
+    -fx-font-family: "Gill Sans MT Bold";
+}
+

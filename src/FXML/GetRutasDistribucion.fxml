@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1000.0" styleClass="mainFxmlClass" stylesheets="@../CSS/getrutasdistribucion.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20.0.1" fx:controller="Controller.GetRutasDistribucionController">
+   <children>
+      <Pane fx:id="grafico" layoutX="30.0" layoutY="92.0" prefHeight="570.0" prefWidth="680.0" styleClass="pane" />
+      <Text layoutX="31.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="txt" text="DOTA SAC - RUTAS" wrappingWidth="402.1333251953124">
+         <font>
+            <Font name="Gill Sans MT Negrita" size="40.0" />
+         </font>
+      </Text>
+      <Text layoutX="727.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="texto" text="Nombre Almacén Origen" wrappingWidth="216.53337402343732">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <TextField fx:id="almacenOrigen" layoutX="722.0" layoutY="121.0" prefHeight="46.0" prefWidth="262.0" promptText="Ingrese el nombre del almacén origen" styleClass="field">
+         <font>
+            <Font name="Roboto" size="14.0" />
+         </font>
+      </TextField>
+      <Text layoutX="725.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="texto" text="Nombre Almacén a visitar" wrappingWidth="216.53337402343732">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <TextField fx:id="almacenesAVisitar" layoutX="720.0" layoutY="215.0" prefHeight="46.0" prefWidth="262.0" promptText="Ingrese el nombre del almacén a visitar" styleClass="field">
+         <font>
+            <Font name="Roboto" size="14.0" />
+         </font>
+      </TextField>
+      <Text layoutX="726.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="texto" text="Nombre Almacén destino" wrappingWidth="216.53337402343732">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <TextField fx:id="almacenDestino" layoutX="721.0" layoutY="310.0" prefHeight="46.0" prefWidth="262.0" promptText="Ingrese el nombre del almacén destino" styleClass="field">
+         <font>
+            <Font name="Roboto" size="14.0" />
+         </font>
+      </TextField>
+      <Button fx:id="btnRuta" layoutX="724.0" layoutY="379.0" mnemonicParsing="false" onMouseClicked="#btnRutaClicked" prefHeight="46.0" prefWidth="254.0" styleClass="btn" text="Buscar ruta más corta">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <FontAwesomeIcon fill="WHITE" glyphName="SEARCH" size="20" text="" wrappingWidth="29.238115310668945" />
+         </graphic>
+      </Button>
+      <Text layoutX="746.0" layoutY="455.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="texto" text="Ruta más corta a recorrer">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <TextArea fx:id="rutaCorta" disable="true" layoutX="725.0" layoutY="460.0" prefHeight="142.0" prefWidth="254.0" style="-fx-border-width: 2; -fx-border-color: black; -fx-border-style: solid;" />
+      <Button fx:id="btnReturn" layoutX="878.0" layoutY="615.0" mnemonicParsing="false" onMouseClicked="#btnReturnClicked" prefHeight="46.0" prefWidth="99.0" styleClass="btn" text="Atrás">
+         <graphic>
+            <FontAwesomeIcon fill="WHITE" glyphName="ARROW_LEFT" size="20" wrappingWidth="25.14285659790039" />
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>
