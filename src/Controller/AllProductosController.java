@@ -79,6 +79,8 @@ public class AllProductosController implements Initializable {
                     String[] dato = linea.split(",");
                     almacen.getGestorProductos().arbolProductos.insert(new Producto(Integer.parseInt(dato[0]) ,dato[1],Integer.parseInt(dato[2])));
                 }
+                Producto.almacen = almacen;
+                cargarCeldas();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -112,6 +114,7 @@ public class AllProductosController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        instance = this;
         fileChooser.setInitialDirectory(new File("src"));
         fileChooser.getExtensionFilters().add(extFilter);
         cargarCeldas();

@@ -88,6 +88,7 @@ public class AllAlmacenesController implements Initializable {
 
     public void cargarCeldas() {
         ObservableList<Almacen> data = FXCollections.observableArrayList();
+
         int i = 0;
 
         while (MenuPrincipalController.almacenes.getVertexAtIndex(i) != null) {

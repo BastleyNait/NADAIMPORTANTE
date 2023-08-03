@@ -48,6 +48,8 @@ public class AddProductoController implements Initializable {
     @FXML
     private TextField stockProducto;
 
+
+
     @FXML
     void btnAgregarClicked(MouseEvent event) throws IOException, ExceptionNoFound {
 
@@ -93,6 +95,7 @@ public class AddProductoController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+
         codigoProducto.setTextFormatter(textFormatterCodigo);
         stockProducto.setTextFormatter(textFormatterStock);
     }

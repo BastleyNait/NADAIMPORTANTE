@@ -13,7 +13,7 @@ public class Producto implements Comparable<Producto> {
     private int stock;
     private Button btnEliminar = new Button("Eliminar");
 
-    static Almacen almacen = new Almacen();
+    static Almacen almacen;
 
     private AllProductosController allProductosController;
 
